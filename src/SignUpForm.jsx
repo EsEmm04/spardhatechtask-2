@@ -1,17 +1,18 @@
+// src/components/SignUpForm.jsx
 import React, { useState } from 'react';
 
-const LoginForm = ({ handleLogin }) => {
+const SignUpForm = ({ handleSignUp }) => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(username, password);
+    handleSignUp({ username, email, password });
   };
 
   return (
-    
-    <form className='login-form' onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Username"
@@ -19,15 +20,20 @@ const LoginForm = ({ handleLogin }) => {
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit">Login</button>
+      <button type="submit">Sign Up</button>
     </form>
-  
   );
 };
 
-export default LoginForm;
+export default SignUpForm;

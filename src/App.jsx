@@ -1,9 +1,11 @@
-import LoginForm from "./LoginPage";
-import './App.css'
+import React from 'react';
+import './App.css';
+import LoginPage from './LoginPage';
+
 function App() {
   return (
-    <div className="page">
-      <LoginForm />
+    <div className="App">
+      <LoginPage />
     </div>
   );
 }
